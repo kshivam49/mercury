@@ -1,0 +1,83 @@
+.herosection{
+    border: 1px solid rgb(235, 231, 231);
+    border-radius: 10px;
+}
+
+.navbar{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+
+}
+.menu a{
+    color: rgb(65, 64, 64);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.menu a:hover{
+    background-color: rgba(243, 245, 246, 1);
+    border-radius: 99px;
+    opacity: 1;
+    
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 6px 16px;
+}
+
+.login a{
+    border: solid 1px black;
+    color: black;
+    padding: 0.7rem 1rem;
+    border-radius: 99px;
+    text-decoration: none;
+}
+
+.login a:nth-child(2){
+    background-color: black;
+    color: white;
+}
+.talk{
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    gap: 2px;
+}
+
+.background-gradient{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: -1;    
+}
+.background-gradient img{
+    border-radius: 16px;
+    width:484px;
+
+}
+.container{
+    display: grid;
+    grid-template-columns:repeat(2,minmax(1px,1fr));
+}
+.card {
+    background: linear-gradient(284deg, rgb(103, 233, 240) 0%, rgb(167, 133, 254) 100%);
+    background-clip: text;
+    color: transparent;
+}
