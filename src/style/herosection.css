@@ -1,6 +1,7 @@
 .herosection{
     border: 1px solid rgb(235, 231, 231);
     border-radius: 10px;
+    position: relative;
 }
 
 .navbar{
@@ -50,10 +51,17 @@
     text-decoration: none;
 }
 
+.login a:nth-child(1):hover{
+    background-color: black;
+    color: white;
+
+}
+
 .login a:nth-child(2){
     background-color: black;
     color: white;
 }
+
 .talk{
     display: flex;
     align-items: center;
@@ -70,14 +78,99 @@
 .background-gradient img{
     border-radius: 16px;
     width:484px;
+    
 
 }
 .container{
+    position: relative;
     display: grid;
     grid-template-columns:repeat(2,minmax(1px,1fr));
+    padding-top: 2.8rem;
+    padding-bottom: 0.3rem;
+}
+
+.content{
+    padding: 1rem 2rem;
+}
+
+.content p{
+    color: rgb(59,60, 69);
+    font-size:large;
+}
+
+#financial{
+    display: inline;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(190, 190, 192);
+    border-radius: 99px;
+}
+
+.content h1{
+    font-size: 88px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 .card {
     background: linear-gradient(284deg, rgb(103, 233, 240) 0%, rgb(167, 133, 254) 100%);
     background-clip: text;
     color: transparent;
 }
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    /* top: 30px; */
+}
+.dashboard img{
+    width: 424px;
+}
+
+.appStore{
+    text-decoration: none;
+    padding: 6px 16px;
+    display:inline-flex;
+    gap: 2px;
+    border-radius: 80px;
+    background-color: black;
+    align-items: center;
+}
+.appStore p{
+    color: white;
+}
+
+.framer{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 10px;
+    z-index: 10;
+    
+}
+
+.framer a{
+    text-decoration: none;
+    color: rgb(37, 36, 36);
+    font-weight: bold;
+}
+
+.dashboard-wrapper {
+    position: relative;
+  }
+  
+  .blurred-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:25%; /* Adjust the height of the blurred area as needed */
+    background: linear-gradient(to bottom, transparent, white); /* Adjust the gradient as needed */
+    filter: blur(10px); /* Adjust the blur value as needed */
+    z-index: 1;
+  }
+  

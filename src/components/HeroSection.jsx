@@ -1,7 +1,27 @@
-import React from 'react'
+import React,{useEffect}  from 'react'
 import '../style/herosection.css'
+import { motion, useAnimation } from 'framer-motion';
+
 
 const HeroSection = () => {
+    const dashboardAnimation = useAnimation();
+    useEffect(() => {
+        const handleScroll = () => {
+          const scrollOffset = window.scrollY;
+          const triggerOffset = 20; 
+    
+          if (scrollOffset > triggerOffset) {
+            dashboardAnimation.start({ opacity: 1, y: 0, scale: 1 });
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [dashboardAnimation]);
+
   return (
     <div className='herosection'>
         <div className='navbar'>
@@ -24,21 +44,51 @@ const HeroSection = () => {
         </div>
         <div>
             <div className='container'>
-                <div>
-                    <p>Financial Management</p>
-                    <h1>A simpler, smarter basic</h1>
-                    <h1>credit <span className='card'>card.</span></h1>
+                <motion.div 
+                    className='content'
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 2, delay: 1.5 }}
+                >
+                    <p id='financial'>Financial Management</p>
+                    <h1>A simpler, smarter basic credit <span className='card'>card.</span></h1>
+                    <p>Your powerful companion on the road to financial success! Explore personal budget management, investment opportunities.</p>
                     <div>
-                        <p>Your powerful companion on the road to financial success! Explore personal budget management, investment opportunities.</p>
+                        <div>
+                            <a className="appStore" href='./store'>
+                                <div>
+                                    <img src='https://framerusercontent.com/images/fVUy1acoLQhx2VAjG9IQqEBgQ.svg' alt='apple'/>
+                                </div>
+                                <div>
+                                    <p>App Store</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src='https://framerusercontent.com/images/1JFj3FwlaG94oqSBTQUOdyY6nHA.png?scale-down-to=1024' alt='dashboard'/>
+                    <div className='framer'>
+                        <a href='/framer'>Made in Framer</a>
+                    </div>
+                </motion.div>
+                <div className='dashboard-wrapper'>
+                    <motion.div 
+                        className='dashboard'
+                        animate={dashboardAnimation}
+                        initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <img src='https://framerusercontent.com/images/1JFj3FwlaG94oqSBTQUOdyY6nHA.png?scale-down-to=1024' alt='dashboard'/>
+                    </motion.div>
+                    <div className='blurred-overlay'></div>
                 </div>
             </div>
-            <div className='background-gradient'>
+            <motion.div className='background-gradient' 
+                initial={{ scale: 0.94}}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.5}}
+                >
                 <img src='https://framerusercontent.com/images/hY7dz3uD5cYp9mzioTBHqQvUw.png?scale-down-to=1024' alt='gradient'/>
-            </div>
+            </motion.div>
+            
 
         </div>
     </div>
